@@ -63,7 +63,7 @@ function reload(arr) {
       // showPosters.style.scale = '0.8'
       showingAllPosters = !showingAllPosters;
       reload(arr);
-    };
+    }
   }
 }
 
