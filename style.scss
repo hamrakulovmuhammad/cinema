@@ -7,9 +7,9 @@
 }
 body {
   background: #1e2538;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .container {
@@ -78,6 +78,7 @@ body {
       background: #3657cb;
     }
   }
+
   .flex_row {
     display: flex;
     align-items: center;
@@ -116,7 +117,6 @@ body {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        cursor: pointer;
         position: relative;
         border-radius: 10px;
         display: flex;
@@ -252,9 +252,11 @@ body {
   .trelers_vide {
     border-radius: 10px;
     width: 240px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 175px;
-    display: flex;
-    background: #4bcb36;
+    display: flex; 
     align-items: center;
     justify-content: center;
   }
@@ -305,6 +307,7 @@ body {
 
   .hover_button {
     border: 0;
+    cursor: pointer;
     display: none;
     border-radius: 10px;
     font-weight: 800;
@@ -324,40 +327,70 @@ body {
 
   .movie_sroll {
     display: flex;
+    gap: 10px;
     overflow-x: scroll;
     &::-webkit-scrollbar {
       display: none;
     }
-    .display_flex {
+    .on_block {
       .block {
+        width: 245px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 320px;
+        .block_for_bals {
+          position: absolute;
+          width: 40px;
+          height: 20px;
+          right: 18px;
+          top: 18px;
+          border-radius: 5px;
+          background: #4bcb36;
+          display: flex;
+          justify-content: center;
+          p {
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
       }
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      cursor: pointer;
-      position: relative;
-      border-radius: 10px;
-      width: 245px;
-      height: 320px;
-    }
-    .block_of_balls {
-      z-index: 2524534265324153421;
-      position: absolute;
-      width: 40px;
-      height: 20px;
-      right: 18px;
-      top: 18px;
-      border-radius: 5px;
-      background: #4bcb36;
-      display: flex;
-      justify-content: center;
-      p {
+      h2 {
+        width: 245px;
+        font-size: 18px;
         color: white;
-        font-size: 14px;
-        font-weight: 600;
-        display: flex;
-        justify-content: center;
+        font-weight: 800;
       }
+      p {
+        width: 245px;
+        color: #f2f60f;
+        font-size: 10px;
+        font-weight: 600;
+      }
+    }
+    margin-bottom: 77px;
+  }
+  .scroll_data {
+    width: 220px;
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    nav.scroll_data {
+      display: flex;
+      gap: 20px;
+    }
+  }
+  .flex_row {
+    h1 {
+      color: white;
+      font-size: 35px;
+      font-weight: 800;
     }
   }
 }
