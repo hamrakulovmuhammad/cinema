@@ -697,11 +697,14 @@ footer {
   position: absolute;
   z-index: -1;
   top: 0;
-  height: 1080px;
+  height: 100vh;
   background-image: linear-gradient(to top, #1e2538 5%, rgba(0, 0, 0, 0.4) 100%),
     url(/public/joker.png);
   background-size: cover;
   transform: translate(-50% -30%);
   background-repeat: no-repeat;
   background-position: center;
+  box-shadow:
+  inset 0px -20px 20px 6px #1E2538,
+  0px -12px 10px -10px #1E2538;
 }

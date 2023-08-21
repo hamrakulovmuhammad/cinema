@@ -1,0 +1,77 @@
+body {
+  height: 100vh;
+  background-image: url(../public/joker.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.container{
+    width: 1050px;
+    margin: 0 auto;
+}
+.header {
+  gap: 60px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.logo_img img {
+  width: 30px;
+  height: 30px;
+}
+.flex_block {
+  margin-bottom: 10px;
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+.socials {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.socials img {
+  width: 15px;
+  height: 15px;
+}
+.login {
+  gap: 12px;
+  display: flex;
+}
+.search_button {
+  border: 0;
+  width: 40px;
+  height: 40px;
+  background: #ffffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  font-size: 10px;
+  margin-left: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+.in_nav {
+  display: flex;
+  gap: 10px;
+}
+
+.singing_button {
+  border: 0;
+  color: white;
+  font-weight: 600;
+  width: 110px;
+  height: 40px;
+  border-radius: 10px;
+  background: #3657cb;
+}
