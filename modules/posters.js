@@ -12,8 +12,8 @@ fetch(
 )
   .then((res) => res.json())
   .then((res) => reload(res.results));
-
 function reload(arr) {
+  let background_image = document.querySelector(".backgound_image");
   const toShow = showingAllPosters ? arr.length : 8;
   let movies = document.querySelector(".movies");
   movies.innerHTML = "";
@@ -26,7 +26,7 @@ function reload(arr) {
     let movies_h2 = document.createElement("h2");
     let movies_p = document.createElement("p");
 
-    button.style.cursor='pointer'
+    button.style.cursor = "pointer";
     button.innerHTML = "Карточка фильма";
     button.classList.add("hover_button");
     block_for_flex.classList.add("block_for_flex");
@@ -40,30 +40,26 @@ function reload(arr) {
     block_for_flex.append(movie_block, movies_h2, movies_p);
     movie_block.append(movie_bal, button);
     movie_bal.append(movie_bal_p);
-
-
-    button.onclick = () => {
-      window.location.href = `https://www.themoviedb.org/movie/${item.id}?language=en-US`;
-    }
     movie_block.onmouseenter = () => {
-      movie_block.style.opacity = `0.7`;
       button.style.display = "block";
+      background_image.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`;
     };
 
+    button.onclick = () => {
+      window.location.href = `../pages/index.html?id=` + item.id;
+    };
     setTimeout(() => {
       movie_block.onmouseleave = () => {
-        movie_block.style.opacity = `1`;
-
         button.style.display = "none";
       };
     }, 0.4);
     const showPosters = document.querySelector(".show_more button");
     showPosters.innerHTML = showingAllPosters ? "Скрыть" : "Показать все";
     showPosters.onclick = () => {
-      // showPosters.style.scale = '0.8'
+      showPosters.style.scale = "0.8";
       showingAllPosters = !showingAllPosters;
       reload(arr);
-    }
+    };
   }
 }
 
@@ -96,4 +92,3 @@ function Slider(arr) {
   }
 }
 Slider();
-

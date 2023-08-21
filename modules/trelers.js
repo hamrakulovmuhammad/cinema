@@ -53,17 +53,13 @@ function trelerMovie(arr) {
       .then((res) => {
         let rnd = Math.floor(Math.random() * res.results.length);
         let selectMovie = res.results[rnd];
-        img.onmouseenter = () => {
+        img.onclick = () => {
           ifream.src = `https://www.youtube.com/embed/${selectMovie.key}`;
           statistic_h2.innerHTML = i.title;
-
         };
-        trelers_video.onmouseenter = () => {
+        trelers_video.onclick = () => {
           ifream.src = `https://www.youtube.com/embed/${selectMovie.key}`;
           statistic_h2.innerHTML = i.title;
-
-          console.log("click");
-          console.log(ifream);
         };
       });
   }
