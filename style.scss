@@ -694,7 +694,16 @@ footer {
   }
 }
 
-.backgound_image {
+.background_grodient {
+  transition: 1s ease;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(30,37,56,0.639093137254902) 3%, rgba(30,37,56,0.25253851540616246) 42%, rgba(30,37,56,0.8715861344537815) 77%, rgba(30,37,56,1) 96%);}
+
+  .backgound_image {
   transition: 1s ease;
   width: 100%;
   position: absolute;
