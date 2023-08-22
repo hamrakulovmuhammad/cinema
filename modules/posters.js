@@ -46,7 +46,7 @@ function reload(arr) {
     };
 
     button.onclick = () => {
-      window.location.href = `../pages/index.html?id=` + item.id;
+      window.location.href = `../pages/information/index.html?id=` + item.id;
     };
     setTimeout(() => {
       movie_block.onmouseleave = () => {
