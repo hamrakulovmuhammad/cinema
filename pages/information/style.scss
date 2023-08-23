@@ -320,9 +320,34 @@ a {
 }
 
 .name {
-  color: #FFF;
+  color: #fff;
   font-family: Qanelas;
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 20px;
+}
+
+.movie_posters {
+  display: flex;
+  gap: 20px;
+}
+.dubl {
+  width: 245px;
+  height: 320px;
+  background: green;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.similar_films {
+  h1 {
+    margin-top: 73px;
+    margin-bottom: 42px;  
+    text-align: center;color: #FFF;
+    font-family: Qanelas;
+    font-size: 45px;
+    font-weight: 900;
+  }
 }

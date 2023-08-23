@@ -14,7 +14,7 @@ fetch(`https://api.themoviedb.org/3/movie/${poster_id}`, {
 
 function reloadA(arr) {
   let statistic = document.querySelector(".statistic h2");
-let name =document.querySelector(".name")
+  let name = document.querySelector(".name");
   let reytings = 0;
   let body = document.querySelector("body");
   let movie = document.querySelector(".movie");
@@ -29,10 +29,9 @@ let name =document.querySelector(".name")
   button.onmouseleave = () => {
     button.style.opacity = "0.4";
   };
-  console.log(movie);
   statistic.innerHTML = arr.title;
 
-  name.innerHTML= arr.title;
+  name.innerHTML = arr.title;
   h1.innerHTML = arr.title;
   h2.innerHTML = arr.title;
   p.innerHTML = arr.overview;
@@ -55,7 +54,6 @@ let name =document.querySelector(".name")
       let h1 = document.querySelector(".myChart_one h1");
       h1.innerHTML = res.vote_average;
       let myChart_first = document.querySelector("#myChart_first");
-      console.log(myChart_first);
       new Chart(myChart_first, {
         type: "doughnut",
         data: {
@@ -98,7 +96,6 @@ fetch(
 function reload(arr) {
   let ifream = document.querySelector("iframe");
   let display_flex = document.querySelector(".display_flexs");
-  console.log(arr);
   for (let i of arr.slice(0, 10)) {
     let box = document.createElement("div");
     let image_box = document.createElement("div");
@@ -133,3 +130,26 @@ function reload(arr) {
       });
   }
 }
+
+fetch(`https://api.themoviedb.org/3/movie/${poster_id}movie_id/images`, {
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Njk2ZDg1MDhlNjEzODRlMjBhZTY1NzBkYzQ2N2U0YiIsInN1YiI6IjY0ZDhiNmU5MzcxMDk3MDBmZmI2M2Y3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mGHV5LcY2Igtl0uEXLehhKlma2EO4txUC9v4eJH2GhM",
+  },
+})
+.then((res)=> res.json())
+.then((res)=> create(res.posters));
+
+function create(arr) {
+  let movie_posters = document.querySelector(".movie_posters");
+  console.log(movie_posters);
+  for (let i of arr.slice(0, 4)) {
+    let dubl = document.createElement("div");
+
+    dubl.classList.add("dubl");
+    dubl.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${i.file_path})`;
+
+    movie_posters.append(dubl)
+  }
+}
+create()
