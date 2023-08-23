@@ -21,7 +21,6 @@ function trelerMovie(arr) {
 
     statistic_h2.innerHTML = i.title;
 
-    console.log(statistic_h2);
     treler.classList.add("treler");
     trelers_video.classList.add("trelers_vide");
     trelers_video.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.backdrop_path})`;

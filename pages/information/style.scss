@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
 }
 .info h2 {
   color: #fff;
-  margin-top: -25px;
+  margin-top: 0px;
   font-family: Qanelas;
   font-size: 25px;
   text-align: left;
@@ -210,6 +210,7 @@ a {
   );
 }
 .new_traylers {
+  margin-bottom: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -221,7 +222,7 @@ a {
   font-weight: 900;
 }
 .right a {
-  color: #FFF;
+  color: #fff;
   font-family: Qanelas;
   font-size: 18px;
   font-weight: 700;
@@ -232,11 +233,96 @@ a {
   gap: 20px;
 }
 
+.boxs h4 {
+  margin-top: 10px;
+  color: #fff;
+  font-family: Qanelas;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.boxs p {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Qanelas;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.boxs h5 {
+  color: #f2f60f;
+  font-family: Qanelas;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: 200;
+}
+
 .body {
   top: 100vh;
-  height: 500px;
   position: absolute;
   width: 100%;
   z-index: 1;
   background: #1e2538;
+}
+.display_flexs {
+  margin-bottom: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.image_box {
+  width: 194px;
+  height: 194px;
+  border-radius: 10px;
+  background-image: url(/public/notfound.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.statistic_line {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 43px;
+  .name_of_film {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+  }
+}
+.statistic h2 {
+  font-size: 30px;
+  color: white;
+  font-weight: 800;
+}
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.grade {
+  display: flex;
+  gap: 9px;
+}
+.grade button {
+  background: #1b2133;
+  border: 0;
+  width: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+}
+
+.name {
+  color: #FFF;
+  font-family: Qanelas;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }

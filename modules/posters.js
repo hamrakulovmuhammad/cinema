@@ -92,3 +92,31 @@ function Slider(arr) {
   }
 }
 Slider();
+
+// function onblock() {
+//   let table_of_actiors = document.querySelector(".table_of_actiors");
+// console.log(table_of_actiors);
+//   for (let i = 0; i < 10; i++) {
+//     let boxForInfo = document.createElement("div");
+//     let nameAndAge = document.createElement("div");
+//     let tableOfPlace = document.createElement("div");
+//     let h1 = document.createElement("h1");
+//     let h2 = document.createElement("h2");
+//     let p = document.createElement("p");
+//     let h2_2 = document.createElement("h2");
+
+//     boxForInfo.classList.add("box_for_info");
+//     nameAndAge.classList.add("name_and_age");
+//     h1.textContent = "Тинто Брасс";
+//     h2.textContent = "Tinto Brass";
+//     p.textContent = "87 лет";
+//     tableOfPlace.classList.add("table_of_place");
+//     h2_2.textContent = "3-е место";
+
+//     table_of_actiors.append(boxForInfo)
+//     tableOfPlace.append(h2_2);
+//     nameAndAge.append(h1, h2, p);
+//     boxForInfo.append(nameAndAge, tableOfPlace);
+//   }
+// }
+// onblock()
