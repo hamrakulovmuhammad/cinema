@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
   height: 100vh;
   background-image: url(../public/joker.png);
@@ -9,6 +14,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 .info h1 {
+  margin-top: 0;
   text-align: left;
   color: #fff;
   font-family: Qanelas;
@@ -19,7 +25,6 @@ body::-webkit-scrollbar {
   color: #fff;
   margin-top: -25px;
   font-family: Qanelas;
-  margin-bottom: 30px;
   font-size: 25px;
   text-align: left;
   font-weight: 500;
@@ -35,14 +40,14 @@ body::-webkit-scrollbar {
 }
 .box {
   width: 100%;
-  height: 500px;
+  height: 430px;
   gap: 40px;
   display: flex;
 }
 .display_flex {
   display: flex;
   gap: 25px;
-align-items: center;
+  align-items: center;
 }
 .display_flex button {
   cursor: pointer;
@@ -136,4 +141,102 @@ a {
   height: 40px;
   border-radius: 10px;
   background: #3657cb;
+}
+
+.reyting {
+  align-items: center;
+  display: flex;
+  gap: 13px;
+}
+.reyting button {
+  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  background: #1b2133;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reyting p {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+.reyting_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  background: #1b2133;
+}
+.reyting_box p {
+  color: #57d043;
+  font-family: Qanelas;
+  font-size: 14px;
+  font-weight: 500;
+}
+.myChart_one {
+  position: relative;
+  background-color: #348528ad;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.myChart_one h1 {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.backgound_grodient {
+  transition: 1s ease;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 37, 56, 0.639093137254902) 3%,
+    rgba(30, 37, 56, 0.25253851540616246) 42%,
+    rgba(30, 37, 56, 0.8715861344537815) 77%,
+    rgba(30, 37, 56, 1) 96%
+  );
+}
+.new_traylers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.new_traylers h2 {
+  color: #fff;
+  font-family: Qanelas;
+  font-size: 45px;
+  font-weight: 900;
+}
+.right a {
+  color: #FFF;
+  font-family: Qanelas;
+  font-size: 18px;
+  font-weight: 700;
+}
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.body {
+  top: 100vh;
+  height: 500px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background: #1e2538;
 }

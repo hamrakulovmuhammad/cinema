@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="backgound_grodient"></div>
     <div class="container">
       <header></header>
       <div class="box">
@@ -15,22 +16,58 @@
         <div class="info">
           <h1></h1>
           <h2></h2>
+          <div class="myChart_one">
+            <h1></h1>
+            <canvas id="myChart_first"></canvas>
+          </div>
           <p></p>
           <div class="display_flex">
             <button>
               <img src="../public/player.png" alt="" />
               Смотреть трейлер
             </button>
-            <img width="15px" height="15px" src="/public/vk.png" alt="">
-            <img width="15px" height="15px" src="/public/instagram.png" alt="">
-            <img width="15px" height="15px" src="/public/facebook.png" alt="">
-            <img width="15px" height="15px" src="/public/twitter.png" alt="">
-            <img width="15px" src="/public/more.png" alt="">
+            <img width="15px" height="15px" src="/public/vk.png" alt="" />
+            <img
+              width="15px"
+              height="15px"
+              src="/public/instagram.png"
+              alt=""
+            />
+            <img width="15px" height="15px" src="/public/facebook.png" alt="" />
+            <img width="15px" height="15px" src="/public/twitter.png" alt="" />
+            <img width="15px" src="/public/more.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="reyting">
+        <button>
+          <img src="/public/like.png" alt="" />
+        </button>
+        <button>
+          <img src="/public/diselike.png" alt="" />
+        </button>
+        <div class="reyting_box">
+          <p>Рейтиг ожиданий 85%</p>
+        </div>
+        <button>
+          <img src="/public/heart.png" alt="" />
+        </button>
+        <p>В избранном у 37933 человек</p>
+      </div>
+    </div>
+    <div class="body">
+      <div class="container">
+        <div class="new_traylers">
+          <h2>В главных ролях:</h2>
+          <div class="right">
+            <a href="">Все актёры</a>
+            <img src="/public/right.png" alt="" />
           </div>
         </div>
       </div>
     </div>
-    <script src="index.js"></script>
-    <script src="/modules/header.js"></script>
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="/modules/header.js"></script>
   </body>
 </html>

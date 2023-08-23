@@ -640,6 +640,8 @@ footer {
       background-repeat: no-repeat;
       background-size: cover;
       .logo {
+        width: 150px;
+        margin: 0 auto;
         padding-top: 75px;
         padding-bottom: 55px;
       }
@@ -678,17 +680,10 @@ footer {
         border: 0;
         margin-bottom: 30px;
       }
-      .check_box {
-        display: flex;
-        align-items: center;
+      form {
         justify-content: center;
-        input {
-          border-radius: 2px;
-          border: 1px solid #f2f60f;
-          background: #f2f60f;
-          width: 17px;
-          height: 17px;
-        }
+        display: flex;
+        gap: 10px;
       }
     }
   }
@@ -701,9 +696,16 @@ footer {
   z-index: -1;
   top: 0;
   height: 100vh;
-  background: linear-gradient(180deg, rgba(30,37,56,0.639093137254902) 3%, rgba(30,37,56,0.25253851540616246) 42%, rgba(30,37,56,0.8715861344537815) 77%, rgba(30,37,56,1) 96%);}
+  background: linear-gradient(
+    180deg,
+    rgba(30, 37, 56, 0.639093137254902) 3%,
+    rgba(30, 37, 56, 0.25253851540616246) 42%,
+    rgba(30, 37, 56, 0.8715861344537815) 77%,
+    rgba(30, 37, 56, 1) 96%
+  );
+}
 
-  .backgound_image {
+.backgound_image {
   transition: 1s ease;
   width: 100%;
   position: absolute;
