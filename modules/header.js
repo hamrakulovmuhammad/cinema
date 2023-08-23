@@ -31,12 +31,12 @@ function Header() {
   flex_block.classList.add("flex_block");
   logo.classList.add("logo");
   socials.classList.add("socials");
-  social_img_one.src = "public/twitter.png";
-  social_img_two.src = "public/instagram.png";
-  social_img_three.src = "public/facebook.png";
-  social_img_four.src = "public/vk.png";
+  social_img_one.src = "/public/twitter.png";
+  social_img_two.src = "/public/instagram.png";
+  social_img_three.src = "/public/facebook.png";
+  social_img_four.src = "/public/vk.png";
   singing_button.innerHTML = "Войти";
-  logo_img.src = "public/logo.png";
+  logo_img.src = "/public/logo.png";
   logo_img.classList.add("logo_img");
   nav.classList.add("nav");
   in_nav.classList.add("in_nav");
@@ -46,7 +46,7 @@ function Header() {
   a_three.href = "#";
   a_four.href = "#";
   a_five.href = "#";
-  a_six.href = "#";
+  a_six.href = "/pages/collections/index.html";
   a_seven.href = "#";
 
   a_one.innerHTML = "Афиша";
@@ -58,9 +58,9 @@ function Header() {
   a_seven.innerHTML = "Категории";
   login.classList.add("login");
   search_button.classList.add("search_button");
-  search_img.src = "public/searchicon.png";
+  search_img.src = "/public/searchicon.png";
   singing_button.classList.add("singing_button");
-  logo_kinoarea.src = "public/kinoarea.png";
+  logo_kinoarea.src = "/public/kinoarea.png";
 
   headers?.append(header);
   header.append(company, nav, login);
