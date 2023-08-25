@@ -32,10 +32,10 @@ function Header() {
   flex_block.classList.add("flex_block");
   logo.classList.add("logo");
   socials.classList.add("socials");
-  social_img_one.src = "/public/twitter.png";
-  social_img_two.src = "/public/instagram.png";
-  social_img_three.src = "/public/facebook.png";
-  social_img_four.src = "/public/vk.png";
+  social_img_one.src = "/public/twitter.svg";
+  social_img_two.src = "/public/instagram.svg";
+  social_img_three.src = "/public/facebook.svg";
+  social_img_four.src ="/public/vkontakte.svg";
   singing_button.innerHTML = "Войти";
   logo_img.src = "/public/logo.png";
   logo_img.style.cursor = "pointer";

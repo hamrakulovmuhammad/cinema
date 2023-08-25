@@ -115,6 +115,9 @@ function reload(arr) {
     if (i.profile_path === null) {
       image_box.style.backgroundImage = `url(/public/notfound.png)`;
     }
+    image_box.onclick = () => {
+      location.assign("/pages/actiors/index.html?id=" + i.id)
+    };  
 
     fetch(`https://api.themoviedb.org/3/movie/${poster_id}/videos`, {
       headers: {
@@ -181,11 +184,26 @@ function Slider(arr) {
     block_for_bals.classList.add("block_for_bals");
     block_for_bals_p.innerHTML = i.vote_average;
     h2.innerHTML = i.title;
-    p.innerHTML = i.title;
 
     movie_sroll.append(on_block);
     on_block.append(block, h2, p);
     block.append(block_for_bals);
     block_for_bals.append(block_for_bals_p);
+
+    fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, {
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Njk2ZDg1MDhlNjEzODRlMjBhZTY1NzBkYzQ2N2U0YiIsInN1YiI6IjY0ZDhiNmU5MzcxMDk3MDBmZmI2M2Y3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mGHV5LcY2Igtl0uEXLehhKlma2EO4txUC9v4eJH2GhM",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        let info_ganr_tx = ``;
+        for (const el of i.genre_ids) {
+          const genres = res.genres.filter((obj) => obj.id === el);
+          info_ganr_tx = info_ganr_tx + genres[0].name + `, `;
+        }
+        p.innerHTML = info_ganr_tx.slice(0, -2);
+      });
   }
 }

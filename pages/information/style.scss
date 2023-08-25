@@ -354,6 +354,7 @@ a {
 }
 
 .reload {
+  border-radius: 10px;
   width: 270px;
   height: 400px;
   background-color: #1b2133;
@@ -366,6 +367,7 @@ a {
   display: flex;
   gap: 10px;
   overflow-x: scroll;
+  margin-bottom: 50px;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -390,6 +392,7 @@ a {
         display: flex;
         justify-content: center;
         p {
+          margin-top: 3px;
           color: white;
           text-align: center;
           font-size: 14px;
@@ -409,6 +412,178 @@ a {
       color: #f2f60f;
       font-size: 10px;
       font-weight: 600;
+    }
+  }
+}
+
+footer {
+  padding-top: 95px;
+  width: 100%;
+  background: #151a26;
+  height: 100%;
+  .container {
+    width: 1050px;
+    margin: 0 auto;
+    .expected_novelties {
+      display: flex;
+      overflow-x: scroll;
+      margin-bottom: 105px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      gap: 20px;
+      .expected_movies {
+        .expected_block {
+          width: 245px;
+          height: 320px;
+          background-image: url(/public/joker.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .expected_texts {
+          width: 240px;
+          h2 {
+            width: 245px;
+            font-size: 18px;
+            color: white;
+            font-weight: 800;
+          }
+          p {
+            width: 245px;
+            color: #f2f60f;
+            font-size: 10px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .footer_block {
+      width: 1050px;
+      height: 480px;
+      border-radius: 10px;
+      background-image: url(/public/fotterImage.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .logo {
+        width: 150px;
+        margin: 0 auto;
+        padding-top: 75px;
+        padding-bottom: 55px;
+      }
+      .footer_info {
+        h1 {
+          text-align: center;
+          color: #fff;
+          font-size: 40px;
+          font-weight: 900;
+          margin-bottom: 25px;
+        }
+        p {
+          width: 704px;
+          text-align: center;
+          color: #fff;
+          margin: 0 auto;
+          font-size: 20px;
+          font-weight: 500;
+          margin-bottom: 35px;
+        }
+      }
+      button {
+        width: 180px;
+        border-radius: 10px;
+        border: 0;
+        background: yellow;
+        font-weight: 700;
+        height: 61px;
+      }
+      .input {
+        padding-left: 30px;
+        width: 325px;
+        height: 61px;
+        border-radius: 10px;
+        background: #fff;
+        border: 0;
+        margin-bottom: 30px;
+      }
+      form {
+        justify-content: center;
+        display: flex;
+        gap: 10px;
+      }
+    }
+    .social_media {
+      margin-top: 60px;
+      margin-bottom: 35px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      gap: 30px;
+      img {
+        width: 25px;
+      }
+    }
+    .hrefs {
+      margin-bottom: 41px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      a {
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+    }
+  }
+  .kinoarea {
+    color: rgba(227, 230, 240, 0.72);
+    text-align: center;
+    font-family: Qanelas;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .a {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    padding-bottom: 50px;
+    color: rgba(227, 230, 240, 0.72);
+    text-align: center;
+    font-family: Qanelas;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .agree {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    .checked {
+      width: 20px;
+      height: 20px;
+      background: greenyellow;
+    }
+    .eggry {
+      display: flex;
+      justify-content: start;
+      gap: 5px;
+      .f {
+        color: #f2f60f;
+        text-align: left;
+        font-family: Qanelas;
+        font-size: 17px;
+        font-weight: 400;
+      }
+      a {
+        color: #f2f60f;
+        text-align: left;
+        font-family: Qanelas;
+        font-size: 17px;
+        font-weight: 400;
+      }
     }
   }
 }

@@ -588,8 +588,64 @@ body {
       }
     }
   }
+
+  .actior_flex {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    h1 {
+      color: #fff;
+      font-family: Qanelas;
+      font-size: 65px;
+      font-weight: 900;
+    }
+    h2 {
+      color: #fff;
+      font-family: Qanelas;
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 30px;
+      margin-top: 12px;
+    }
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      font-family: Qanelas;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    a {
+      color: #f2f60f;
+      font-family: Qanelas;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .actior_img {
+      box-shadow: 5px 0px 33px 11px gray;
+      border-radius: 10px;
+      width: 345px;
+      height: 420px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .coriera,
+    .height,
+    .birdhtdey,
+    .place_birdhday,
+    .ganr,
+    .all_film,
+    .info_bio {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 10px;
+    }
+  }
 }
+
 footer {
+  padding-top: 95px;
   width: 100%;
   background: #151a26;
   height: 100%;
@@ -670,7 +726,7 @@ footer {
         font-weight: 700;
         height: 61px;
       }
-      input {
+      .input {
         padding-left: 30px;
         width: 325px;
         height: 61px;
@@ -683,6 +739,78 @@ footer {
         justify-content: center;
         display: flex;
         gap: 10px;
+      }
+    }
+    .social_media {
+      margin-top: 60px;
+      margin-bottom: 35px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      gap: 30px;
+      img {
+        width: 25px;
+      }
+    }
+    .hrefs {
+      margin-bottom: 41px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      a {
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+    }
+  }
+  .kinoarea {
+    color: rgba(227, 230, 240, 0.72);
+    text-align: center;
+    font-family: Qanelas;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .a {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    padding-bottom: 50px;
+    color: rgba(227, 230, 240, 0.72);
+    text-align: center;
+    font-family: Qanelas;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .agree {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    .checked {
+      width: 20px;
+      height: 20px;
+      background: greenyellow;
+    }
+    .eggry {
+      display: flex;
+      justify-content: start;
+      gap: 5px;
+      .f {
+        color: #f2f60f;
+        text-align: left;
+        font-family: Qanelas;
+        font-size: 17px;
+        font-weight: 400;
+      }
+      a {
+        color: #f2f60f;
+        text-align: left;
+        font-family: Qanelas;
+        font-size: 17px;
+        font-weight: 400;
       }
     }
   }
