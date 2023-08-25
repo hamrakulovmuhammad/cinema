@@ -91,7 +91,6 @@ function Slider(arr) {
     block_for_bals.append(block_for_bals_p);
   }
 }
-Slider();
 
 // function onblock() {
 //   let table_of_actiors = document.querySelector(".table_of_actiors");

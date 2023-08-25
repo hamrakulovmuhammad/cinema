@@ -131,4 +131,61 @@ function reload(arr) {
   }
 }
 
+fetch(`https://api.themoviedb.org/3/movie/${poster_id}movie_id/images`, {
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Njk2ZDg1MDhlNjEzODRlMjBhZTY1NzBkYzQ2N2U0YiIsInN1YiI6IjY0ZDhiNmU5MzcxMDk3MDBmZmI2M2Y3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mGHV5LcY2Igtl0uEXLehhKlma2EO4txUC9v4eJH2GhM",
+  },
+})
+  .then((res) => res.json())
+  .then((res) => reload_Poster(res.posters));
 
+function reload_Poster(arr) {
+  let reload_cont = document.querySelector(".movie_posters");
+  for (let i of arr.slice(0, 4)) {
+    let reload = document.createElement("div");
+    reload.classList.add("reload");
+
+    reload.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.file_path} )`;
+
+    reload_cont.append(reload);
+  }
+}
+
+fetch(
+  `  https://api.themoviedb.org/3/movie/${poster_id}movie_id/similar?language=en-US&page=1`,
+  {
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Njk2ZDg1MDhlNjEzODRlMjBhZTY1NzBkYzQ2N2U0YiIsInN1YiI6IjY0ZDhiNmU5MzcxMDk3MDBmZmI2M2Y3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mGHV5LcY2Igtl0uEXLehhKlma2EO4txUC9v4eJH2GhM",
+    },
+  }
+)
+  .then((res) => res.json())
+  .then((res) => Slider(res.results));
+
+function Slider(arr) {
+  console.log(arr);
+  let movie_sroll = document.querySelector(".similar_filfm_poster");
+  for (let i of arr.slice(0, 4)) {
+    let on_block = document.createElement("div");
+    let block = document.createElement("div");
+    let block_for_bals = document.createElement("div");
+    let block_for_bals_p = document.createElement("p");
+    let h2 = document.createElement("h2");
+    let p = document.createElement("p");
+
+    on_block.classList.add("on_block");
+    block.classList.add("block");
+    block.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.poster_path})`;
+    block_for_bals.classList.add("block_for_bals");
+    block_for_bals_p.innerHTML = i.vote_average;
+    h2.innerHTML = i.title;
+    p.innerHTML = i.title;
+
+    movie_sroll.append(on_block);
+    on_block.append(block, h2, p);
+    block.append(block_for_bals);
+    block_for_bals.append(block_for_bals_p);
+  }
+}

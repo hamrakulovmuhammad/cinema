@@ -323,7 +323,7 @@ a {
   color: #fff;
   font-family: Qanelas;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 100;
   margin-bottom: 20px;
 }
 
@@ -344,10 +344,71 @@ a {
 .similar_films {
   h1 {
     margin-top: 73px;
-    margin-bottom: 42px;  
-    text-align: center;color: #FFF;
+    margin-bottom: 42px;
+    text-align: center;
+    color: #fff;
     font-family: Qanelas;
     font-size: 45px;
     font-weight: 900;
+  }
+}
+
+.reload {
+  width: 270px;
+  height: 400px;
+  background-color: #1b2133;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.similar_filfm_poster {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .on_block {
+    .block {
+    border-radius: 10px;
+      margin-bottom: 10px;
+      width: 245px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      height: 320px;
+      .block_for_bals {
+        position: absolute;
+        width: 40px;
+        height: 20px;
+        right: 18px;
+        top: 18px;
+        border-radius: 5px;
+        background: #4bcb36;
+        display: flex;
+        justify-content: center;
+        p {
+          color: white;
+          text-align: center;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+    h2 {
+      width: 245px;
+      font-size: 18px;
+      color: white;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+    p {
+      width: 245px;
+      color: #f2f60f;
+      font-size: 10px;
+      font-weight: 600;
+    }
   }
 }

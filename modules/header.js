@@ -1,6 +1,7 @@
 let headers = document.querySelector("header");
 
 function Header() {
+  let modal =document.querySelector('.modal_bg')
   let header = document.createElement("div");
   let company = document.createElement("div");
   let flex_block = document.createElement("div");
@@ -37,10 +38,11 @@ function Header() {
   social_img_four.src = "/public/vk.png";
   singing_button.innerHTML = "Войти";
   logo_img.src = "/public/logo.png";
+  logo_img.style.cursor = "pointer";
   logo_img.classList.add("logo_img");
   nav.classList.add("nav");
   in_nav.classList.add("in_nav");
-
+  
   a_one.href = "#";
   a_two.href = "#";
   a_three.href = "#";
@@ -48,7 +50,7 @@ function Header() {
   a_five.href = "#";
   a_six.href = "/pages/collections/index.html";
   a_seven.href = "#";
-
+  
   a_one.innerHTML = "Афиша";
   a_two.innerHTML = "Медиа";
   a_three.innerHTML = "Фильмы";
@@ -61,7 +63,8 @@ function Header() {
   search_img.src = "/public/searchicon.png";
   singing_button.classList.add("singing_button");
   logo_kinoarea.src = "/public/kinoarea.png";
-
+  logo_kinoarea.style.cursor = "pointer";
+  
   headers?.append(header);
   header.append(company, nav, login);
   company.append(flex_block, socials);
@@ -71,9 +74,20 @@ function Header() {
     social_img_two,
     social_img_three,
     social_img_four
-  );
-  login.append(search_button, singing_button);
-  search_button.append(search_img);
-  nav.append(in_nav, a_one, a_two, a_three, a_four, a_five, a_six, a_seven);
+    );
+    logo_kinoarea.onclick = () => {
+      window.location.href = "http://localhost:5173/";
+  
+    }
+    login.append(search_button, singing_button);
+    search_button.append(search_img);
+    nav.append(in_nav, a_one, a_two, a_three, a_four, a_five, a_six, a_seven);
+    logo_img.onclick = () => {
+      window.location.href = "http://localhost:5173/";
+    };
+    
+  search_img.onclick = () => {
+    modal.style.display = "block";
+  };
 }
 Header();

@@ -129,7 +129,6 @@ body {
         height: 320px;
       }
       .movie_bal {
-        z-index: 2524534265324153421;
         position: absolute;
         width: 40px;
         height: 20px;
@@ -717,4 +716,26 @@ footer {
   transform: translate(-50% -30%);
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.modal_bg {
+  display: none;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  left: 50%;
+}
+
+.modal {
+  width: 500px;
+  position: sticky;
+  top: 0;
+  left: 50%;
+  transform: translate(-20%, 30%);
+}
+header {
+  z-index: 5;
 }
