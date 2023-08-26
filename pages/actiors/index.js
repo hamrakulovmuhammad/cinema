@@ -10,3 +10,26 @@ fetch(`https://api.themoviedb.org/3/person/${poster_id}?language=en-US'`, {
   .then((res) => res.json())
   .then((res) => actiorInformation(res));
 
+  function actiorInformation(arr) {
+    let actior_img = document.querySelector(".actior_img");
+    console.log(arr);
+    let h1 = document.querySelector(".actior_info h1");
+    let h2 = document.querySelector(".actior_info h2");
+    let coriera = document.querySelector(".coriera a");
+    let height = document.querySelector(".height a");
+    let birdhtdey = document.querySelector(".birdhtdey a");
+    let place_birdhday = document.querySelector(".place_birdhday a");
+    let ganr = document.querySelector(".ganr a");
+    let all_film = document.querySelector(".all_film a");
+    console.log(actior_img);
+  
+    h1.innerHTML = arr.name;
+    h2.innerHTML = arr.name;
+    actior_img.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${arr.profile_path})`;
+    coriera.innerHTML = arr.popularity;
+    height.innerHTML = "1.90";
+    birdhtdey.innerHTML = arr.birthday;
+    place_birdhday.innerHTML = arr.place_of_birth;
+    ganr.innerHTML = arr.gender;
+    all_film.innerHTML = arr.known_for_department;
+  }
