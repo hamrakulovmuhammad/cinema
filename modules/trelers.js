@@ -13,7 +13,7 @@ function trelerMovie(arr) {
   let statistic_h2 = document.querySelector(".statistic h2");
 
   let trelers = document.querySelector(".trelers");
-  for (let i of arr) {
+  for (let i of arr)   {
     let treler = document.createElement("div");
     let trelers_video = document.createElement("div");
     let img = document.createElement("img");
@@ -52,6 +52,7 @@ function trelerMovie(arr) {
       .then((res) => {
         let rnd = Math.floor(Math.random() * res.results.length);
         let selectMovie = res.results[rnd];
+        ifream.src = `https://www.youtube.com/embed/${selectMovie.key}`;
         img.onclick = () => {
           ifream.src = `https://www.youtube.com/embed/${selectMovie.key}`;
           statistic_h2.innerHTML = i.title;

@@ -246,12 +246,26 @@ body {
     gap: 28px;
     overflow-x: scroll;
     &::-webkit-scrollbar {
-      display: none;
+      width: 30px;
+      height: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #1b2133;
+      border-radius: 50px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      border-radius: 10px;
+      background: #3657cb;
+      width: 422px;
+      height: 7px;
     }
     h2 {
       color: white;
       font-weight: 800;
-      font-size: 16px;
+      font-size: 14px;
       margin-top: 8px;
     }
   }
@@ -626,6 +640,7 @@ body {
       border-radius: 10px;
       width: 345px;
       height: 420px;
+      background-image: url(/public/posterss.png);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -643,7 +658,6 @@ body {
     }
   }
   .like {
-    display: flex;
     align-items: center;
     gap: 20px;
     p {
@@ -822,7 +836,7 @@ footer {
       justify-content: start;
       gap: 5px;
       .f {
-        color: #f2f60f;
+        color: white;
         text-align: left;
         font-family: Qanelas;
         font-size: 17px;
