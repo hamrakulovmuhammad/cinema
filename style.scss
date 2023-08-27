@@ -58,7 +58,7 @@ body {
       align-items: center;
     }
     a {
-      font-size: 10px;
+      font-size: 14px;
       margin-left: 30px;
       color: white;
       text-decoration: none;
@@ -127,6 +127,7 @@ body {
         justify-content: center;
         width: 245px;
         height: 320px;
+
       }
       .movie_bal {
         position: absolute;
@@ -241,6 +242,7 @@ body {
   }
 
   .trelers {
+    padding-top: 50px;
     margin-bottom: 78px;
     display: flex;
     gap: 28px;
@@ -279,6 +281,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    &:hover {
+      transform: translateY(-20px);
+    }
   }
 
   .scroll {
@@ -354,12 +360,25 @@ body {
     }
     .on_block {
       .block {
-        width: 245px;
+        width: 255px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
-        height: 320px;
+        height: 350px;
+        button {
+          display: none;
+          border-radius: 10px;
+          width: 170px;
+          height: 45px;
+          border: 0;
+          font-weight: 900;
+          background: white;
+          color: #3657cb;
+        }
         .block_for_bals {
           position: absolute;
           width: 40px;

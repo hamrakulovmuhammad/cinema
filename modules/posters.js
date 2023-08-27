@@ -74,9 +74,12 @@ function Slider(arr) {
     let block = document.createElement("div");
     let block_for_bals = document.createElement("div");
     let block_for_bals_p = document.createElement("p");
+    let button = document.createElement("button");
     let h2 = document.createElement("h2");
     let p = document.createElement("p");
 
+    button.style.cursor = "pointer";
+    button.innerHTML = "Карточка фильма";
     on_block.classList.add("on_block");
     block.classList.add("block");
     block.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.poster_path})`;
@@ -87,8 +90,21 @@ function Slider(arr) {
 
     movie_sroll.append(on_block);
     on_block.append(block, h2, p);
-    block.append(block_for_bals);
+    block.append(block_for_bals, button);
     block_for_bals.append(block_for_bals_p);
+
+    block.onmouseenter = () => {
+      button.style.display = "block";
+    };
+    button.onclick = () => {
+      window.location.href = `../pages/information/index.html?id=` + i.id;
+    };
+    block.onmouseleave = () => {
+      button.style.display = "none";
+    };
+    if (i.poster_path === null) {
+      block.style.backgroundImage = `url(/public/posterss.png)`;
+    }
   }
 }
 
