@@ -83,6 +83,13 @@ html {
   width: 1050px;
   margin: 0 auto;
 }
+.name {
+  color: #fff;
+  font-family: Qanelas;
+  font-size: 22px;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
 .header {
   gap: 60px;
   margin-top: 15px;
@@ -276,6 +283,7 @@ a {
 }
 
 .image_box {
+  cursor: pointer;
   width: 194px;
   height: 194px;
   border-radius: 10px;
@@ -322,13 +330,7 @@ a {
   height: 48px;
 }
 
-.name {
-  color: #fff;
-  font-family: Qanelas;
-  font-size: 22px;
-  font-weight: 100;
-  margin-bottom: 20px;
-}
+
 
 .movie_posters {
   display: flex;
@@ -343,6 +345,68 @@ a {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.movie_sroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  margin-bottom: 50px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .on_block {
+    .block {
+      margin-bottom: 5px;
+      width: 255px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      height: 350px;
+      button {
+        display: none;
+        border-radius: 10px;
+        width: 170px;
+        height: 45px;
+        border: 0;
+        font-weight: 900;
+        background: white;
+        color: #3657cb;
+      }
+      .block_for_bals {
+        position: absolute;
+        width: 40px;
+        height: 20px;
+        right: 18px;
+        top: 18px;
+        border-radius: 5px;
+        background: #4bcb36;
+        display: flex;
+        justify-content: center;
+        p {
+          color: white;
+          text-align: center;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+    h2 {
+      width: 245px;
+      font-size: 18px;
+      color: white;
+      font-weight: 800;
+    }
+    p {
+      width: 245px;
+      color: #f2f60f;
+      font-size: 10px;
+      font-weight: 600;
+    }
+  }
 }
 
 .similar_films {
@@ -419,8 +483,22 @@ a {
     }
   }
 }
+.slid {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  p {
+    margin-top: -5px;
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+  }
+}
 
 .display_grid {
+  margin-bottom: 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr;
@@ -438,8 +516,8 @@ a {
       grid-column: 3 / span 2;
     }
   }
-
 }
+
 footer {
   padding-top: 95px;
   width: 100%;

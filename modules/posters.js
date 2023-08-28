@@ -45,6 +45,9 @@ function reload(arr) {
       background_image.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`;
     };
 
+    if (movie_bal_p.innerHTML <= 5) {
+      movie_bal.style.background = "red";
+    }
     button.onclick = () => {
       window.location.href = `../pages/information/index.html?id=` + item.id;
     };
@@ -93,6 +96,10 @@ function Slider(arr) {
     block.append(block_for_bals, button);
     block_for_bals.append(block_for_bals_p);
 
+    if (block_for_bals_p.innerHTML <= 5) {
+      block_for_bals.style.background = "red";
+    }
+
     block.onmouseenter = () => {
       button.style.display = "block";
     };
@@ -105,6 +112,32 @@ function Slider(arr) {
     if (i.poster_path === null) {
       block.style.backgroundImage = `url(/public/posterss.png)`;
     }
+  }
+}
+fetch("https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1", conf)
+  .then((res) => res.json())
+  .then((res) => reloadUpcoming(res.results));
+
+function reloadUpcoming(arr) {
+  console.log(arr);
+  let expected_novelties = document.querySelector(".expected_novelties");
+  for (let i of arr) {
+    let expected_movies = document.createElement("div");
+    let expected_block = document.createElement("div");
+    let expected_texts = document.createElement("div");
+    let expected_texts_h2 = document.createElement("h2");
+    let expected_texts_p = document.createElement("p");
+
+    expected_movies.classList.add("expected_movies");
+    expected_block.classList.add("expected_block");
+    expected_texts.classList.add("expected_texts");
+    expected_texts_h2.innerHTML = i.title;
+    expected_texts_p.innerHTML = i.title;
+    expected_block.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.poster_path})`;
+
+    expected_novelties.append(expected_movies);
+    expected_movies.append(expected_block, expected_texts);
+    expected_texts.spellcheck(expected_texts_h2, expected_texts_p);
   }
 }
 

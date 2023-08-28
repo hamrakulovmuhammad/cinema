@@ -185,6 +185,13 @@ function Slider(arr) {
     block_for_bals_p.innerHTML = i.vote_average;
     h2.innerHTML = i.title;
 
+
+    if (block_for_bals_p.innerHTML <=5) {
+      block_for_bals.style.background= "red"
+    }
+    if (i.poster_path === null) {
+      block.style.backgroundImage = `url(/public/notfound.png)`;
+    }
     movie_sroll.append(on_block);
     on_block.append(block, h2, p);
     block.append(block_for_bals);
@@ -229,7 +236,6 @@ function gridReload(arr) {
         let grids = document.createElement('display_grid')
         grids.classList.add('grid')
 
-  console.log(`url(https://image.tmdb.org/t/p/original${arr.backdrops[i].file_path})`);
 
         if (i < arr.backdrops.length && arr.backdrops[i].file_path) {
             grids.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${arr.backdrops[i].file_path})`
@@ -237,6 +243,12 @@ function gridReload(arr) {
             grids.style.backgroundImage = `url(/public/notfound.png)`
         }
 
+        if (i.file_path === null) {
+          grids.style.backgroundImage = `url(/public/notfound.png)`;
+        }
+
         grid.append(grids)
     }
 }
+
+
