@@ -131,40 +131,133 @@ function reloadUpcoming(arr) {
     expected_movies.classList.add("expected_movies");
     expected_block.classList.add("expected_block");
     expected_texts.classList.add("expected_texts");
-    expected_texts_h2.innerHTML = i.title;
-    expected_texts_p.innerHTML = i.title;
-    expected_block.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.poster_path})`;
+    expected_texts_h2.innerHTML = i.original_title;
+    expected_texts_p.innerHTML = i.release_date;
+    expected_block.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.backdrop_path})`;
 
     expected_novelties.append(expected_movies);
     expected_movies.append(expected_block, expected_texts);
-    expected_texts.spellcheck(expected_texts_h2, expected_texts_p);
+    expected_texts.append(expected_texts_h2, expected_texts_p);
   }
 }
 
-// function onblock() {
-//   let table_of_actiors = document.querySelector(".table_of_actiors");
-// console.log(table_of_actiors);
-//   for (let i = 0; i < 10; i++) {
-//     let boxForInfo = document.createElement("div");
-//     let nameAndAge = document.createElement("div");
-//     let tableOfPlace = document.createElement("div");
-//     let h1 = document.createElement("h1");
-//     let h2 = document.createElement("h2");
-//     let p = document.createElement("p");
-//     let h2_2 = document.createElement("h2");
+fetch("https://api.themoviedb.org/3/person/popular?language=en-US&page=1", conf)
+  .then((res) => res.json())
+  .then((res) => persons(res.results));
 
-//     boxForInfo.classList.add("box_for_info");
-//     nameAndAge.classList.add("name_and_age");
-//     h1.textContent = "Тинто Брасс";
-//     h2.textContent = "Tinto Brass";
-//     p.textContent = "87 лет";
-//     tableOfPlace.classList.add("table_of_place");
-//     h2_2.textContent = "3-е место";
+function persons(arr) {
+  let place_flex_conetner = document.querySelector(".place_flex_conetner");
+  for (let i of arr.slice(0, 2)) {
+    let img_place = document.createElement("div");
+    let place_title = document.createElement("div");
+    let place_cont_avtor = document.createElement("div");
+    let h4 = document.createElement("h4");
+    let pig = document.createElement("p");
+    let p = document.createElement("p");
 
-//     table_of_actiors.append(boxForInfo)
-//     tableOfPlace.append(h2_2);
-//     nameAndAge.append(h1, h2, p);
-//     boxForInfo.append(nameAndAge, tableOfPlace);
-//   }
-// }
-// onblock()
+    img_place.classList.add("img_place");
+    place_title.classList.add("place_title");
+    place_cont_avtor.classList.add("place_cont_avtor");
+    h4.classList.add("h4");
+    pig.classList.add("pig");
+    p.classList.add("p");
+
+    img_place.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.profile_path})`;
+    h4.innerHTML = i.name;
+    pig.innerHTML = "Популярность  " + i.popularity;
+
+    p.innerHTML = "57 лет";
+
+    place_flex_conetner.prepend(img_place);
+    img_place.prepend(place_title, place_cont_avtor);
+    place_cont_avtor.prepend(h4, pig, p);
+    img_place.onclick = () => {
+      location.assign("/pages/actiors/index.html?id=" + i.id);
+    };
+  }
+}
+
+fetch("https://api.themoviedb.org/3/person/popular?language=en-US&page=1", conf)
+  .then((res) => res.json())
+  .then((res) => table_persons(res.results));
+
+function table_persons(arr) {
+  let place_table_box = document.querySelector(".place_table_box");
+
+  for (let i of arr) {
+    let three_place = document.createElement("div");
+    let titles = document.createElement("div");
+    let h2_table = document.createElement("h2");
+    let p_doc = document.createElement("p");
+    let p_years = document.createElement("p");
+    let place_index = document.createElement("div");
+    let hr = document.createElement("hr");
+
+    three_place.classList.add("three_place");
+    titles.classList.add("titles");
+    h2_table.classList.add("h2");
+    p_doc.classList.add("doc");
+    p_years.classList.add("p_names");
+    place_index.classList.add("place_index");
+    hr.classList.add("hr");
+
+    h2_table.innerHTML = i.name;
+    p_doc.innerHTML = i.name;
+    p_years.innerHTML = "Популярность - " + i.popularity;
+
+    three_place.style.cursor = "pointer";
+    three_place.onclick = () => {
+      location.assign("/pages/actiors/index.html?id=" + i.id);
+    };
+    place_table_box.append(three_place, hr);
+    three_place.append(titles, place_index);
+    titles.append(h2_table, p_doc, p_years);
+
+    for (let it = 0; it < arr.length; it++) {
+      place_index.innerHTML = it;
+    }
+  }
+}
+
+fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', conf)
+    .then((res) => res.json())
+    .then((res) => news_reload(res.results))
+
+
+
+function news_reload(arr) {
+    let rigt_img_new = document.querySelector('.rigt_img_new')
+    let background_images = document.querySelector('.background_images')
+
+    for (let i of arr) {
+        background_images.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.backdrop_path})`
+        let bac_img = document.createElement('div')
+        let date = document.createElement('div')
+        let title_p = document.createElement('div')
+        let hovered_new = document.createElement('div')
+        let ho = document.createElement('div')
+
+        bac_img.classList.add('bac_img')
+        date.classList.add("date")
+        title_p.classList.add('title_p')
+        hovered_new.classList.add('hovered_new')
+        bac_img.style.backgroundImage = ` url(https://image.tmdb.org/t/p/original${i.backdrop_path})`
+        date.innerHTML = "15 Апр 2020"
+        title_p.innerHTML = "Как изменили Соника с последнего анонса"
+        rigt_img_new.append(ho)
+        ho.append(bac_img, hovered_new)
+        bac_img.append(date, title_p)
+        bac_img.onmouseenter = () => {
+            hovered_new.classList.add('hovered_new')
+            console.log('move');
+        }
+        setTimeout(() => {
+            bac_img.onmouseleave = () => {
+                hovered_new.classList.remove('hovered_new')
+            }
+        }, 0);
+
+    }
+}
+
+news_reload()

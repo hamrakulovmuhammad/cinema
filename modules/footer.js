@@ -35,7 +35,8 @@ function footer() {
   two_img.src = "/public/instagram.svg";
   theree_img.src = "/public/facebook.svg";
   four_img.src = "/public/twitter.svg";
-  five_img.src = "";
+  five_img.src = "/public/youtube.svg";
+  five_img.style.width = "30px"
   one_img.alt = "";
   two_img.alt = "";
   theree_img.alt = "";
@@ -70,7 +71,7 @@ function footer() {
   agreeTextInner.classList.add("f");
   emailInput.classList.add("input");
 
-  logoImg.src = "public/logoKinoarea.png";
+  logoImg.src = "/public/logoKinoarea.png";
   logoImg.alt = "";
   footerInfoHeading.textContent = "Подпишитесь на E-mail рассылку";
   footerInfoText.textContent =

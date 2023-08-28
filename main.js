@@ -1,6 +1,11 @@
-// import Swiper, { Navigation, Pagination } from "swiper";
-// Swiper.use([Navigation, Pagination]);
-// import "swoper/swiper-bundel.css";
+// // import Swiper JS
+// import Swiper from "swiper";
+// import { Navigation, Pagination } from "swiper/modules";
+// import "swiper/css";
+
+//  new Swiper(".swiper", {
+//   modules: [Navigation, Pagination],
+// });
 
 // new Swiper(anticipated_swiper, {
 //   mosules: [Navigation, Pagination],
