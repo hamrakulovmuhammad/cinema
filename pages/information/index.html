@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.scss" />
-
   </head>
   <body>
     <div class="backgound_grodient"></div>
@@ -24,10 +23,15 @@
           <p></p>
           <div class="display_flex">
             <button>
-              <img src="../public/player.png" alt="" />
-              <a href="#treyler">Смотреть трейлер</a> 
+              <img src="/public/player.png" alt="" />
+              <a href="#treyler">Смотреть трейлер</a>
             </button>
-            <img width="15px" height="15px" src="/public/vkontakte.svg" alt="" />
+            <img
+              width="15px"
+              height="15px"
+              src="/public/vkontakte.svg"
+              alt=""
+            />
             <img
               width="15px"
               height="15px"
@@ -73,7 +77,8 @@
             <img src="/public/right.png" alt="" />
           </div>
         </div>
-        <iframe id=""
+        <iframe
+          id="treyler"
           width="100%"
           height="500px"
           src="https://www.youtube.com/embed/4wxyy8Rcz4k"
@@ -88,7 +93,12 @@
               <h2></h2>
             </div>
             <div class="socials">
-              <img width="15px" height="15px" src="/public/vkontakte.svg" alt="" />
+              <img
+                width="15px"
+                height="15px"
+                src="/public/vkontakte.svg"
+                alt=""
+              />
               <img
                 width="15px"
                 height="15px"
@@ -146,18 +156,33 @@
         </div>
         <h2 class="name"></h2>
         <div class="movie_posters"></div>
+        <div class="new_traylers">
+          <h2>Кадры из фильма</h2>
+          <div class="right">
+            <a href="">Все постеры</a>
+            <img src="/public/right.png" alt="" />
+          </div>
+        </div>
+
+        <div class="display_grid">
+          <!-- <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div> -->
+        </div>
+
 
         <div class="similar_films">
           <h1>Похожие фильмы</h1>
           <div class="similar_filfm_poster"></div>
         </div>
-    
       </div>
       <footer>
         <div class="footer"></div>
       </footer>
     </div>
-      
 
     <script type="module" src="index.js"></script>
     <script type="module" src="/modules/footer.js"></script>

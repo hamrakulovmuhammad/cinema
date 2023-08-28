@@ -116,8 +116,8 @@ function reload(arr) {
       image_box.style.backgroundImage = `url(/public/notfound.png)`;
     }
     image_box.onclick = () => {
-      location.assign("/pages/actiors/index.html?id=" + i.id)
-    };  
+      location.assign("/pages/actiors/index.html?id=" + i.id);
+    };
 
     fetch(`https://api.themoviedb.org/3/movie/${poster_id}/videos`, {
       headers: {
@@ -206,4 +206,37 @@ function Slider(arr) {
         p.innerHTML = info_ganr_tx.slice(0, -2);
       });
   }
+}
+
+fetch(`https://api.themoviedb.org/3/movie/${poster_id}/images`, {
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Njk2ZDg1MDhlNjEzODRlMjBhZTY1NzBkYzQ2N2U0YiIsInN1YiI6IjY0ZDhiNmU5MzcxMDk3MDBmZmI2M2Y3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mGHV5LcY2Igtl0uEXLehhKlma2EO4txUC9v4eJH2GhM",
+  },
+})
+    .then((res) => res.json())
+    .then((res) => {
+        gridReload(res)
+    })
+
+function gridReload(arr) {
+    let grid = document.querySelector('.display_grid')
+    grid.innerHTML = ''
+
+    const minBackdropCount = 6
+
+    for (let i = 0; i < minBackdropCount; i++) {
+        let grids = document.createElement('display_grid')
+        grids.classList.add('grid')
+
+  console.log(`url(https://image.tmdb.org/t/p/original${arr.backdrops[i].file_path})`);
+
+        if (i < arr.backdrops.length && arr.backdrops[i].file_path) {
+            grids.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${arr.backdrops[i].file_path})`
+        } else {
+            grids.style.backgroundImage = `url(/public/notfound.png)`
+        }
+
+        grid.append(grids)
+    }
 }

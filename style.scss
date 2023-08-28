@@ -97,6 +97,8 @@ body {
         color: white;
         text-decoration: none;
         font-size: 14px;
+        white-space: nowrap;
+        white-space: nowrap;
       }
       .scroll_nav {
         width: 450px;
@@ -311,6 +313,7 @@ body {
     }
     .sroll_box {
       a {
+        white-space: nowrap;
         font-weight: 600;
         color: white;
         text-decoration: none;

@@ -56,14 +56,18 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   width: 250px;
   background: none;
   height: 70px;
   border: 2px solid #ffffffff;
   border-radius: 10px;
-  color: white;
+}
+.display_flex button a {
   font-size: 18px;
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
 }
 .movie {
   box-shadow: 5px 0px 33px 11px gray;
@@ -328,6 +332,7 @@ a {
 
 .movie_posters {
   display: flex;
+  margin-bottom: 95px;
   gap: 20px;
 }
 .dubl {
@@ -372,7 +377,7 @@ a {
   }
   .on_block {
     .block {
-    border-radius: 10px;
+      border-radius: 10px;
       margin-bottom: 10px;
       width: 245px;
       background-position: center;
@@ -415,6 +420,26 @@ a {
   }
 }
 
+.display_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  .grid {
+    height: 340px;
+    border-radius: 10px;
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:first-child {
+      grid-column: 1 / span 2;
+    }
+    &:last-child {
+      grid-column: 3 / span 2;
+    }
+  }
+
+}
 footer {
   padding-top: 95px;
   width: 100%;
