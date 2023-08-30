@@ -80,6 +80,14 @@ function reloadA(arr) {
         },
       });
     });
+
+  let heart = document.querySelector(".heart");
+  heart.onclick = () => {
+    const cinemas = JSON.parse(localStorage.getItem("cinema")) || [];
+    cinemas.push(arr);
+    localStorage.setItem("cinema", JSON.stringify(cinemas));
+    heart.classList.add("red_heart");
+  };
 }
 fetch(
   `https://api.themoviedb.org/3/movie/${poster_id}movie_id/credits?language=en-US`,
@@ -185,9 +193,8 @@ function Slider(arr) {
     block_for_bals_p.innerHTML = i.vote_average;
     h2.innerHTML = i.title;
 
-
-    if (block_for_bals_p.innerHTML <=5) {
-      block_for_bals.style.background= "red"
+    if (block_for_bals_p.innerHTML <= 5) {
+      block_for_bals.style.background = "red";
     }
     if (i.poster_path === null) {
       block.style.backgroundImage = `url(/public/notfound.png)`;
@@ -221,34 +228,31 @@ fetch(`https://api.themoviedb.org/3/movie/${poster_id}/images`, {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Njk2ZDg1MDhlNjEzODRlMjBhZTY1NzBkYzQ2N2U0YiIsInN1YiI6IjY0ZDhiNmU5MzcxMDk3MDBmZmI2M2Y3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mGHV5LcY2Igtl0uEXLehhKlma2EO4txUC9v4eJH2GhM",
   },
 })
-    .then((res) => res.json())
-    .then((res) => {
-        gridReload(res)
-    })
+  .then((res) => res.json())
+  .then((res) => {
+    gridReload(res);
+  });
 
 function gridReload(arr) {
-    let grid = document.querySelector('.display_grid')
-    grid.innerHTML = ''
+  let grid = document.querySelector(".display_grid");
+  grid.innerHTML = "";
 
-    const minBackdropCount = 6
+  const minBackdropCount = 6;
 
-    for (let i = 0; i < minBackdropCount; i++) {
-        let grids = document.createElement('display_grid')
-        grids.classList.add('grid')
+  for (let i = 0; i < minBackdropCount; i++) {
+    let grids = document.createElement("display_grid");
+    grids.classList.add("grid");
 
-
-        if (i < arr.backdrops.length && arr.backdrops[i].file_path) {
-            grids.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${arr.backdrops[i].file_path})`
-        } else {
-            grids.style.backgroundImage = `url(/public/notfound.png)`
-        }
-
-        if (i.file_path === null) {
-          grids.style.backgroundImage = `url(/public/notfound.png)`;
-        }
-
-        grid.append(grids)
+    if (i < arr.backdrops.length && arr.backdrops[i].file_path) {
+      grids.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${arr.backdrops[i].file_path})`;
+    } else {
+      grids.style.backgroundImage = `url(/public/notfound.png)`;
     }
+
+    if (i.file_path === null) {
+      grids.style.backgroundImage = `url(/public/notfound.png)`;
+    }
+
+    grid.append(grids);
+  }
 }
-
-

@@ -11,7 +11,7 @@ fetch(`https://api.themoviedb.org/3/person/${poster_id}?language=en-US'`, {
   .then((res) => actiorInformation(res));
 
 function actiorInformation(arr) {
-  let name = document.querySelector(".name")
+  let name = document.querySelector(".name");
   let actior_img = document.querySelector(".actior_img");
   console.log(arr);
   let h1 = document.querySelector(".actior_info h1");
@@ -24,7 +24,7 @@ function actiorInformation(arr) {
   let all_film = document.querySelector(".all_film a");
   console.log(actior_img);
 
-name.innerHTML=arr.name
+  name.innerHTML = arr.name;
   h1.innerHTML = arr.name;
   h2.innerHTML = arr.name;
   actior_img.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${arr.profile_path})`;
@@ -37,13 +37,19 @@ name.innerHTML=arr.name
   if (arr.profile_path === null) {
     actior_img.style.backgroundImage = `url(/public/posterss.png)`;
   }
+  let heart = document.querySelector(".heart");
+  heart.onclick = () => {
+    const cinemas = JSON.parse(localStorage.getItem('cinema')) || []
+    cinemas.push(arr)
+    localStorage.setItem('cinema', JSON.stringify(cinemas))
+    heart.classList.add("red_heart");
+  };
 }
-fetch(`https://api.themoviedb.org/3/person/${poster_id}/images`,  {
+fetch(`https://api.themoviedb.org/3/person/${poster_id}/images`, {
   headers: {
     Authorization:
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Njk2ZDg1MDhlNjEzODRlMjBhZTY1NzBkYzQ2N2U0YiIsInN1YiI6IjY0ZDhiNmU5MzcxMDk3MDBmZmI2M2Y3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mGHV5LcY2Igtl0uEXLehhKlma2EO4txUC9v4eJH2GhM",
   },
-
 })
   .then((res) => res.json())
   .then((res) => {
@@ -53,35 +59,31 @@ fetch(`https://api.themoviedb.org/3/person/${poster_id}/images`,  {
 function gridReload(arr) {
   let grid = document.querySelector(".display_grid");
   grid.innerHTML = "";
-
   const minBackdropCount = 6;
-
   for (let i = 0; i < minBackdropCount; i++) {
     let grids = document.createElement("div");
     grids.classList.add("grid");
-
-
     if (i < arr.profiles.length && arr.profiles[i].file_path) {
       grids.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${arr.profiles[i].file_path})`;
     } else {
       grids.style.backgroundImage = `url(/public/notfound.png)`;
     }
-
     if (i.file_path === null) {
       grids.style.backgroundImage = `url(/public/notfound.png)`;
     }
-
     grid.append(grids);
   }
 }
 
-
-fetch(`https://api.themoviedb.org/3/person/${poster_id}/movie_credits?language=en-US`,{
-  headers: {
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Njk2ZDg1MDhlNjEzODRlMjBhZTY1NzBkYzQ2N2U0YiIsInN1YiI6IjY0ZDhiNmU5MzcxMDk3MDBmZmI2M2Y3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mGHV5LcY2Igtl0uEXLehhKlma2EO4txUC9v4eJH2GhM",
-  },
-})
+fetch(
+  `https://api.themoviedb.org/3/person/${poster_id}/movie_credits?language=en-US`,
+  {
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Njk2ZDg1MDhlNjEzODRlMjBhZTY1NzBkYzQ2N2U0YiIsInN1YiI6IjY0ZDhiNmU5MzcxMDk3MDBmZmI2M2Y3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mGHV5LcY2Igtl0uEXLehhKlma2EO4txUC9v4eJH2GhM",
+    },
+  }
+)
   .then((res) => res.json())
   .then((res) => Slider(res.cast));
 
@@ -113,7 +115,7 @@ function Slider(arr) {
     block_for_bals.append(block_for_bals_p);
 
     if (block_for_bals_p.innerHTML <= 5) {
-      block_for_bals.style.background = "red"
+      block_for_bals.style.background = "red";
     }
 
     block.onmouseenter = () => {

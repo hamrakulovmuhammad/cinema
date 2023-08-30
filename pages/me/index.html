@@ -13,30 +13,30 @@
         <header></header>
         <div class="profil_dlex">
           <div class="reght place_of_profil">
-            <div class="item">
+            <div data-pages="home" class="item">
               <img src="/public/home-run.png" alt="" />
             </div>
-            <div class="item">
+            <div data-pages="friends" class="item">
               <img src="/public/friend.png" alt="" />
             </div>
-            <div class="item">
+            <div data-pages="comments" class="item">
               <img src="/public/reviews.png" alt="" />
             </div>
-            <div class="item">
+            <div data-pages="likes" class="item">
               <img src="/public/review.png" alt="" />
             </div>
-            <div class="item">
+            <div data-pages="smss" class="item">
               <img src="/public/comment.png" alt="" />
             </div>
-            <div class="item">
+            <div data-pages="cinems" class="item">
               <img src="/public/film.png" alt="" />
             </div>
-            <div class="item">
+            <div data-pages="stars" class="item">
               <img src="/public/famous.png" alt="" />
             </div>
           </div>
           <div class="big_container">
-            <div class="your_profil">
+            <div class="pages active" id="home">
               <div class="your_profit_flex">
                 <h1>Ваш профиль</h1>
                 <button>
@@ -124,12 +124,26 @@
                 </div>
               </div>
             </div>
-            <div class="friends"></div>
-            <div class="comint"></div>
-            <div class="like_and_diselike"></div>
-            <div class="commets"></div>
-            <div class="movie"></div>
-            <div class="famous"></div>
+            <div class="pages" id="friends">friends</div>
+            <div class="pages" id="comments">comments</div>
+            <div class="pages" id="likes">likes</div>
+            <div class="pages" id="smss">smss</div>
+            <div class="pages" id="cinems">
+              <div class="line">
+                <div class="left_img">
+                  <div class="img"></div>
+                  <div class="text">
+                    <h2></h2>
+                    <h3></h3>
+                    <p></p>
+                  </div>
+                </div>
+                <div class="right_line">
+                  <button>Карточка актёра</button>
+                </div>
+              </div>
+            </div>
+            <div class="pages" id="stars">stars</div>
           </div>
         </div>
       </div>
@@ -141,5 +155,6 @@
     <script type="module" src="/main.js"></script>
     <script type="module" src="/modules/header.js"></script>
     <script src="/modules/footer.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
