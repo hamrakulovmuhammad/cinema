@@ -32,7 +32,7 @@ pages_btn.forEach((btn) => {
   };
 });
 
-let cinema = JSON.parse(localStorage.getItem('cinema')) || []
+let cinema = JSON.parse(localStorage.getItem("cinema")) || [];
 console.log(cinema);
 
 fetch(`https://api.themoviedb.org/3/person/${cinema}?language=en-US'`, {
@@ -42,7 +42,7 @@ fetch(`https://api.themoviedb.org/3/person/${cinema}?language=en-US'`, {
   },
 })
   .then((res) => res.json())
-  .then((res) => console.log(res))
+  .then((res) => console.log(res));
 
 cinemas(cinema);
 
@@ -55,9 +55,9 @@ function cinemas(arr2) {
     let p = document.querySelector(".text p");
 
     left_img.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${item.backdrop_path})`;
-    h2.innerHTML = item.title
-    h3.innerHTML =item.original_title
-    p.innerHTML = item.title
-
+    h2.innerHTML = item.title;
+    h3.innerHTML = item.original_title;
+    p.innerHTML = item.title;
   }
 }
+

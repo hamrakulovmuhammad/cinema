@@ -37,13 +37,6 @@ function actiorInformation(arr) {
   if (arr.profile_path === null) {
     actior_img.style.backgroundImage = `url(/public/posterss.png)`;
   }
-  let heart = document.querySelector(".heart");
-  heart.onclick = () => {
-    const cinemas = JSON.parse(localStorage.getItem('cinema')) || []
-    cinemas.push(arr)
-    localStorage.setItem('cinema', JSON.stringify(cinemas))
-    heart.classList.add("red_heart");
-  };
 }
 fetch(`https://api.themoviedb.org/3/person/${poster_id}/images`, {
   headers: {
