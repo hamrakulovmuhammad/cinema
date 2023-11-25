@@ -13,13 +13,13 @@ body {
 }
 html {
   scroll-behavior: smooth;
-
 }
 
 .container {
   position: relative;
   width: 1050px;
   margin: 0 auto;
+  box-shadow: inset;
 }
 .div {
   display: flex;
