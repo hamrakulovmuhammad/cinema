@@ -20,23 +20,7 @@ html {
   width: 1050px;
   margin: 0 auto;
 }
-.div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  background: #323a55;
-  position: fixed;
-  right: 5%;
-  top: 50%;
-  a {
-    text-align: center;
-    img {
-      rotate: 90deg;
-    }
-  }
-}
+
 .header {
   gap: 60px;
   margin-top: 15px;
