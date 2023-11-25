@@ -45,7 +45,10 @@ html {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
+  .logo_img img {
+    width: 30px;
+    height: 30px;
+  }
   .flex_block {
     margin-bottom: 10px;
     align-items: center;
