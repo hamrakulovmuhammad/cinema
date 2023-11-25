@@ -49,7 +49,12 @@ html {
     width: 30px;
     height: 30px;
   }
- 
+  .flex_block {
+    margin-bottom: 10px;
+    align-items: center;
+    display: flex;
+    gap: 6px;
+  }
   .socials {
     display: flex;
     gap: 10px;
